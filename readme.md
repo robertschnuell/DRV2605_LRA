@@ -39,7 +39,7 @@ If you are using the C10-100 from precision microdrives you can easy use the fun
 
 ### Select effects
 The easiest way to create a vibration is to use one of the build in effects  of the DRV2605. Use the function selectEffect(int id )
-An overview about all of the available effects with there corresponding id is listed here:
+An overview about all of the available effects with there corresponding id is listed in the datasheet.
 
 
 ### Create Vibration

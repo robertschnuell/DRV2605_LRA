@@ -1,26 +1,35 @@
 /*
-Arduino Library to Control the TI DRV2605 IC with an LRA
- Author: Robert Schnüll
+  Arduino Library to Control the TI DRV2605 IC with an LRA
+  Author: Robert Schnüll
     @robertschnuell
 
+    Based on this datasheet: http://www.ti.com/lit/ds/symlink/drv2605.pdf
 
+    Copyright (c) 2019 Robert Schnüll
 
-Based on this datasheet: http://www.ti.com/lit/ds/symlink/drv2605.pdf
-
-2018,2019
-
-    This work is licensed under a
-    Creative Commons
-    Attribution-ShareAlike
-    4.0 International License.
-
+    This work is licensed via MIT License.
 
 */
+
 #ifndef H_DRV2605_LRA
 #define H_DRV2605_LRA
 
 #include "Arduino.h"
 #include <Wire.h>
+
+
+// DEBUG MODE
+
+
+#if defined(DEBUG)
+#define spl(a) (Serial.println(a))
+#define sp(a) (Serial.print(a))
+#define spt() (Serial.print("\t"))
+#else
+#define spl(a)
+#define sp(a)
+#define spt()
+#endif
 
 
 
@@ -77,11 +86,15 @@ class DRV2605_LRA {
     void writeRegister8(uint8_t reg, uint8_t val);
     uint8_t readRegister8(uint8_t reg);
 
+    uint8_t enablePinId;
+
 
   public:
     DRV2605_LRA();
     void begin();
     void begin(uint8_t sda_pin, uint8_t scl_pin);
+    void enablePin(uint8_t e);
+    void enableIC(bool b);
 
 
     void selectLibrary(uint8_t lib);
@@ -96,6 +109,7 @@ class DRV2605_LRA {
 
 
     bool autoCal( uint8_t ratedVoltage, uint8_t overdriveClamp,uint8_t* compensation, uint8_t* backEMF, uint8_t* feedback );
+    void autoCal(uint8_t ratedVoltage, uint8_t overdriveClamp);
 
 };
 
