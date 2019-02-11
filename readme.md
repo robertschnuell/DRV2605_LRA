@@ -28,7 +28,7 @@ As an easy starting point use a breakout for the DRV2605 which is breadboard fri
 4. Connect both I2C Terminals to the microcontroller (SDA,SCL)
 
 ### Calibrate the LRA
-To get the best results out of the LRA the registers of the DRV2605 has to be set to the values of the used LRA. After this run the LRA_calibration.ino example sketch. The results of this test will be written into the registers after the test as well as will be printed via Serial so you can use them afterwards.
+To get the best results out of the LRA the registers of the DRV2605 has to be set to the values of the used LRA. After this run the LRA_basic.ino example sketch. The results of this test will be written into the registers after the test as well as will be printed via Serial so you can use them afterwards.
 
 For this process you will need following informations:
 - Rated Voltage
@@ -52,6 +52,9 @@ Now you are done and can play around with this powerful IC. There are some examp
 ## More functions to drive an LRA
 There are several more functions to control an LRA with the DRV2605, like realtime playback or playing an effect after an interrupt trigger without using the I2C bus.
 
+##ToDo
+- adding examples for different LRA's
+- adding external trigger function
 
 ## Documents
 https://www.precisionmicrodrives.com/product/datasheet/c10-100-10mm-linear-resonant-actuator-4mm-type-datasheet.pdf
