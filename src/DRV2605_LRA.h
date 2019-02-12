@@ -84,6 +84,7 @@ class DRV2605_LRA {
     uint8_t readRegister8(uint8_t reg);
 
     uint8_t enablePinId;
+    void go();
 
 
   public:
@@ -95,10 +96,13 @@ class DRV2605_LRA {
 
 
     void selectLibrary(uint8_t lib);
-    void go();
+
 
 
     void test();
+
+    void selectEffect(uint8_t effectId);
+    void play();
 
     void play(uint8_t effectId);
 

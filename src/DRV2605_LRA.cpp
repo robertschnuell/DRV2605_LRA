@@ -60,6 +60,16 @@ void DRV2605_LRA::play(uint8_t effectId) {
 
 }
 
+void DRV2605_LRA::selectEffect(uint8_t effectId) {
+  uint8_t seq = 0;
+  writeRegister8(DRV2605_ADRESS_WAVESEQ1+0, effectId);
+  writeRegister8(DRV2605_ADRESS_WAVESEQ1+1, 0);
+}
+
+void DRV2605_LRA::play() {
+  go();
+}
+
 void DRV2605_LRA::setupDone() {
   writeRegister8(DRV2605_ADRESS_MODE, DRV2605_MODE_INTTRIG);
   selectLibrary(6); // the library no. 6 is dedicated to be used for LRA's. All other can be used to control EMR's
