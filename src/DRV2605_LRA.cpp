@@ -107,7 +107,11 @@ void DRV2605_LRA::writeRegister8(uint8_t reg, uint8_t val) {
 }
 
 
-
+void DRV2605_LRA::autoCal(String name ) {
+  if (name.equals("C10-100") ) {
+    autoCal(102,105);
+  }
+}
 
 void DRV2605_LRA::autoCal(uint8_t ratedVoltage, uint8_t overdriveClamp) {
 

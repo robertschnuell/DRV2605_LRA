@@ -5,9 +5,6 @@
 
     Based on this datasheet: http://www.ti.com/lit/ds/symlink/drv2605.pdf
 
-    Copyright (c) 2019 Robert Schnüll
-
-    This work is licensed via MIT License.
 
 */
 
@@ -107,7 +104,7 @@ class DRV2605_LRA {
 
     void setupDone() ;
 
-
+    void autoCal(String name );
     bool autoCal( uint8_t ratedVoltage, uint8_t overdriveClamp,uint8_t* compensation, uint8_t* backEMF, uint8_t* feedback );
     void autoCal(uint8_t ratedVoltage, uint8_t overdriveClamp);
 
